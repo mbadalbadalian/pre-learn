@@ -1,6 +1,4 @@
-import * as constants from "../utils/constants";
-
-function Results({ }) {
+function Results() {
   return (
     <div>
       <h1>
