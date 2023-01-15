@@ -29,6 +29,7 @@ function App() {
         </div>
         <div class = "main-menu">
           <ul>
+          <li><a onClick={() => {setCurrentPageTab(constants.PAGES.HOME);}}>Home</a></li>
             <li><a onClick={() => {setCurrentPageTab(constants.PAGES.ABOUTUS);}}>About Us</a></li>
           </ul>
         </div>
