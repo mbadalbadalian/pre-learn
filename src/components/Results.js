@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import '../styles/Results.css';
 import Videos from "./Video";
-import * as youtubeHandler from "../utnpmils/youtubeHandler";
+import * as youtubeHandler from "../utils/youtubeHandler";
 import * as questionsHandler from "../utils/questionsHandler";
 import * as constants from "../utils/constants";
-import { stringify } from "querystring";
+
 /*
 const pd = require("node-pandas");
 const personalPythonScript = 'C:/Users/matth/Documents/pre-learn/ML/ClassifyYouTubeComments.py';
