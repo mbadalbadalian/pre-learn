@@ -37,7 +37,7 @@ function App() {
         </div>
       </div>
       {currentPageTab === constants.PAGES.HOME && (
-        <Home setCurrentPageTab={setCurrentPageTab} setCurrentCourse={setCurrentCourse}/>
+        <Home setCurrentPageTab={setCurrentPageTab} setCurrentCourse={setCurrentCourse} setCurrentQuestion={setCurrentQuestion}/>
       )}
       
       {currentPageTab === constants.PAGES.QUESTIONS && (
@@ -49,7 +49,7 @@ function App() {
       )}
 
       {currentPageTab === constants.PAGES.ABOUTUS && (
-        <AboutUs setCurrentPageTab={setCurrentPageTab}/>
+        <AboutUs setCurrentPageTab={setCurrentPageTab} setCurrentQuestion={setCurrentQuestion}/>
       )}
       <div class = "footer">
         <div class = "footer-menu">

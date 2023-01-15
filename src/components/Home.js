@@ -4,7 +4,14 @@ import robot from "../assets/robot.png"
 import computer from "../assets/computer.png"
 import chart from "../assets/chart.png"
 
-function Home({ setCurrentPageTab, setCurrentCourse }) {
+function Home({ setCurrentPageTab, setCurrentCourse, setCurrentQuestion }) {
+  constants.TOPICS.forEach(topic => {
+      topic.score = 0;
+      topic.videos = [];
+      topic.comments = [];
+  });
+  setCurrentQuestion(0);
+
   return (
     <div class = "main">
       <div class="container">
