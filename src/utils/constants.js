@@ -7,13 +7,13 @@ export const PAGES = {
 
 export let TOPICS = [
   {
-    name: "techniques of integration",
+    name: "Techniques of integration",
     score: 0,
     videos: [],
     comments: []
   },
   {
-    name: "applications of definite integrals",
+    name: "Applications of definite integrals",
     score: 0,
     videos: [],
     comments: []
