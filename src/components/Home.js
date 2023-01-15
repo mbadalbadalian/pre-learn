@@ -12,7 +12,22 @@ function Home({ setCurrentPageTab, course }) {
           <li>Acts a refresher to fundamental concepts required for the course</li>
           <li>Presenting topics you need to know for the course by looking at prerequisites</li>
           <li>Information about the course, course ratings, professor ratings, course difficulty</li>
+          <li>Acts a refresher to fundamental concepts required for the course</li>
+          <li>Presenting topics you need to know for the course by looking at prerequisites</li>
+          <li>Information about the course, course ratings, professor ratings, course difficulty</li>
+          <li>Acts a refresher to fundamental concepts required for the course</li>
+          <li>Presenting topics you need to know for the course by looking at prerequisites</li>
+          <li>Information about the course, course ratings, professor ratings, course difficulty</li>
+          <li>Acts a refresher to fundamental concepts required for the course</li>
+          <li>Presenting topics you need to know for the course by looking at prerequisites</li>
+          <li>Information about the course, course ratings, professor ratings, course difficulty</li>
+          <li>Acts a refresher to fundamental concepts required for the course</li>
+          <li>Presenting topics you need to know for the course by looking at prerequisites</li>
+          <li>Information about the course, course ratings, professor ratings, course difficulty</li>
         </ul>
+        <h2>
+          Enter your course code below!
+        </h2>
         <form action="" class="search-bar">
           <input type="search" name="search" pattern=".*\S.*" required></input>
           <button class="search-btn" type="submit">

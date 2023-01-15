@@ -1,6 +1,6 @@
 import '../styles/Home.css';
 import * as constants from "../utils/constants";
-import logo from "../assets/logo.png"
+
 
 
 function Results({setCurrentPageTab}) {
