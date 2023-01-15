@@ -45,7 +45,7 @@ function App() {
       )}
       
       {currentPageTab === constants.PAGES.RESULTS && (
-        <Results setCurrentPageTab={setCurrentPageTab} currentCourse={currentCourse}/>
+        <Results setCurrentPageTab={setCurrentPageTab} />
       )}
 
       {currentPageTab === constants.PAGES.ABOUTUS && (

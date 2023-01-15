@@ -5,14 +5,17 @@ export const PAGES = {
   ABOUTUS: 3
 };
 
-export const TOPICS = [
-  "techniques of integration",
-  "applications of definite integrals",
-  "differential equations",
-  "polar coordinates",
-  "parametrized curves",
-  "sequences",
-  "infinite series",
-  "power series",
-  "partial derivatives"
+export let TOPICS = [
+  {
+    name: "techniques of integration",
+    score: 0,
+    videos: [],
+    comments: []
+  },
+  {
+    name: "applications of definite integrals",
+    score: 0,
+    videos: [],
+    comments: []
+  }
 ]
