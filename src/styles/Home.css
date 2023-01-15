@@ -339,13 +339,6 @@ button:hover {
     transform: translateY(1px);
     justify-content: left;
 }
-
-.biography {
-    display: grid;
-    align-items: center; 
-    grid-template-columns: 1fr 1fr 1fr;
-    column-gap: 5px;
-}
    
 .bioImg {
      max-width: 100%;

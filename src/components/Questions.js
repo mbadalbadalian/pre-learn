@@ -24,9 +24,7 @@ function Questions({ setCurrentPageTab, currentQuestion, setCurrentQuestion }) {
           nextQuestion()
         }}> 3</button><button onClick={() => {
           nextQuestion()
-        }}> 4</button><button onClick={() => {
-          nextQuestion()
-        }}> 5</button>
+        }}> 4</button>
       </p>
     </div>
   );

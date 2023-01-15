@@ -18,29 +18,49 @@ function AboutUs({ setCurrentPageTab }) {
                 As students ourselves, we've worked hard to build a tool that aims to help our fellow comrades organize their learning material, create better study plans, and get the most out of their educational experiences.
             </p>
             <div class="biography">
-                <div class="bioImg">
-                    <img src = {glen} alt = "Glen Picture" width = "50"></img>
+                <div class="row">
+                    <div class="bioImg">
+                        <img src = {glen} alt = "Glen Picture" width = "15%"></img>
+                    </div>
+                    <div class="bioText">
+                        <h2>
+                            Glen Tsui
+                        </h2>
+                        Biography in progress..
+                    </div>
                 </div>
-                <div class="bioText">
-                    Biography in progress..
+                <div class="row">
+                    <div class="bioImg">
+                        <img src = {az} alt = "Azriel Picture" width = "15%"></img>
+                    </div>
+                    <div class="bioText">
+                        <h2>
+                            Azriel Gingoyon
+                        </h2>
+                        Biography in progress..
+                    </div>
                 </div>
-                <div class="bioImg">
-                    <img src = {az} alt = "Azriel Picture" width = "50"></img>
+                <div class="row">
+                    <div class="bioImg">
+                        <img src = {sanju} alt = "Sanjula Picture" width = "15%"></img>
+                    </div>
+                    <div class="bioText">
+                        <h2>
+                            Sanjula Ganepola
+                        </h2>
+                        Biography in progress..
+                    </div>
                 </div>
-                <div class="bioText">
-                    Biography in progress..
-                </div>
-                <div class="bioImg">
-                    <img src = {matt} alt = "Matt Picture" width = "50"></img>
-                </div>
-                <div class="bioText">
-                    Biography in progress..
-                </div>
-                <div class="bioImg">
-                    <img src = {sanju} alt = "Sanjula Picture" width = "50"></img>
-                </div>
-                <div class="bioText">
-                    Biography in progress..
+                <div class="row">
+                    <div class="bioImg">
+                        <img src = {matt} alt = "Matthew Picture" width = "15%"></img>
+                    </div>
+                    <div class="bioText">
+                        <h2>
+                            Matthew Badal-Badalian
+                        </h2>
+                        Biography in progress..
+                    </div>
                 </div>
             </div>
             <ul>
