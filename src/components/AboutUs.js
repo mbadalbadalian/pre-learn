@@ -20,7 +20,7 @@ function AboutUs({ setCurrentPageTab }) {
             <div class="biography">
                 <div class="row">
                     <div class="bioImg">
-                        <img src = {glen} alt = "Glen Picture" width = "100"></img>
+                        <img src = {glen} class="inset" alt = "Glen Picture" width = "100"></img>
                     </div>
                     <div class="bioText">
                         <h2>
@@ -32,7 +32,7 @@ function AboutUs({ setCurrentPageTab }) {
                 </div>
                 <div class="row">
                     <div class="bioImg">
-                        <img src = {az} alt = "Azriel Picture" width = "100"></img>
+                        <img src = {az} class="inset" alt = "Azriel Picture" width = "100"></img>
                     </div>
                     <div class="bioText">
                         <h2>
@@ -43,7 +43,7 @@ function AboutUs({ setCurrentPageTab }) {
                 </div>
                 <div class="row">
                     <div class="bioImg">
-                        <img src = {sanju} alt = "Sanjula Picture" width = "100"></img>
+                        <img src = {sanju} class="inset" alt = "Sanjula Picture" width = "100"></img>
                     </div>
                     <div class="bioText">
                         <h2>
@@ -54,7 +54,7 @@ function AboutUs({ setCurrentPageTab }) {
                 </div>
                 <div class="row">
                     <div class="bioImg">
-                        <img src = {matt} alt = "Matthew Picture" width = "100"></img>
+                        <img src = {matt} class="inset" alt = "Matthew Picture" width = "100"></img>
                     </div>
                     <div class="bioText">
                         <h2>
