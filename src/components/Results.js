@@ -23,7 +23,9 @@ function Results({ setCurrentPageTab, currentCourse }) {
       <ul>
         Ngl u kinda failed, nothing can help you buddy
       </ul>
-
+      {videoDetails === undefined && (
+        <h1>Loading suggested videos...</h1>
+      )}
       {videoDetails !== undefined && (
         <Videos videoDetails={videoDetails}></Videos>
       )}
