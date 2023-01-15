@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import '../styles/Home.css';
+import '../styles/Results.css';
 import Videos from "./Video";
 import * as youtubeHandler from "../utils/youtubeHandler";
 import * as questionsHandler from "../utils/questionsHandler";
@@ -53,7 +53,7 @@ function Results({ setCurrentPageTab }) {
   }, []);
 
   return (
-    <div>
+    <div class = "results">
       <h1>
         Results
       </h1>

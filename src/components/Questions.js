@@ -1,5 +1,6 @@
 import * as constants from "../utils/constants";
 import * as questionsHandler from "../utils/questionsHandler";
+import '../styles/Questions.css';
 
 function Questions({ setCurrentPageTab, currentQuestion, setCurrentQuestion, course }) {
   function nextQuestion(score) {
@@ -13,11 +14,14 @@ function Questions({ setCurrentPageTab, currentQuestion, setCurrentQuestion, cou
   }
 
   return (
-    <div>
+    <div class = "wrapper">
       <h1>
         Question {currentQuestion + 1}
       </h1>
-      {questionsHandler.getQuestions(course)[currentQuestion]}
+      <div class = "question">
+        {questionsHandler.getQuestions(course)[currentQuestion]}
+      </div>
+     
       <p>
         <button onClick={() => {
           nextQuestion(1)
