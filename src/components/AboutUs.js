@@ -3,7 +3,7 @@ import * as constants from "../utils/constants";
 import logo from "../assets/logo.png"
 
 
-function Home({ setCurrentPageTab }) {
+function AboutUs({ setCurrentPageTab }) {
   return (
     <div class = "main">
       <div class = "header">
@@ -24,20 +24,13 @@ function Home({ setCurrentPageTab }) {
       
       <div class="container">
         <h1>
-          Make you sure you know everything that is needed to know for your course!
+            Here is the team:
         </h1>
         <ul>
-          <li>Acts a refresher to fundamental concepts required for the course</li>
-          <li>Presenting topics you need to know for the course by looking at prerequisites</li>
-          <li>Information about the course, course ratings, professor ratings, course difficulty</li>
+          <li>Team Member 1</li>
+          <li>Team Member 2</li>
         </ul>
-        <form action="" class="search-bar">
-          <input type="search" name="search" pattern=".*\S.*" required></input>
-          <button class="search-btn" type="submit">
-            <span>Search</span>
-          </button>
-        </form>
-        <input type="text" defaultvalue="Insert Course"></input>
+        <input value="Insert Course"></input>
 
         <button onClick={() => {
           setCurrentPageTab(constants.PAGES.QUESTIONS);
@@ -49,4 +42,4 @@ function Home({ setCurrentPageTab }) {
   );
 }
 
-export default Home;
+export default AboutUs;

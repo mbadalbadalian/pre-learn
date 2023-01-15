@@ -3,6 +3,7 @@ import * as constants from "./utils/constants";
 import Home from "./components/Home";
 import Questions from "./components/Questions";
 import Results from "./components/Results";
+import AboutUs from "./components/AboutUs";
 import './styles/App.css';
 
 function App() {
@@ -25,6 +26,10 @@ function App() {
       
       {currentPageTab === constants.PAGES.RESULTS && (
         <Results currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion}/>
+      )}
+
+      {currentPageTab === constants.PAGES.ABOUTUS && (
+        <AboutUs setCurrentPageTab={setCurrentPageTab}/>
       )}
     </div>
   );
