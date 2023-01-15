@@ -1,8 +1,8 @@
 const YOUTUBE_API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 export const opts = {
-    height: '200',
-    width: '200',
+    height: '600',
+    width: '100%',
     playerVars: {
         // https://developers.google.com/youtube/player_parameters
         autoplay: 1,

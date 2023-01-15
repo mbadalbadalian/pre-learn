@@ -32,21 +32,29 @@ function Home({ setCurrentPageTab, setCurrentCourse }) {
       </div>
       <div class="techs">
             <div class="column">
-              <img src={computer} alt = "Computer Icon" width = "100"></img>
+                <div class="techImg">
+                  <img src={computer} alt = "Computer Icon" width = "100"></img>
+                </div>
               <h2>
                 Fetch relevant concepts from course directory
               </h2>
               Using the course code from user input, PreLearn fetches and extracts the course data to find relevant fundamental concepts.
             </div>
             <div class="column">
-              <img src={robot} alt = "Robot Icon" width = "100"></img>
+              <div class="techImg">
+                <img src={robot} alt = "Robot Icon" width = "100"></img>
+              </div>
               <h2>
                 ML sorts the learning videos by most positively reviewed
               </h2>
               Trained on Sentiment Analysis, the algorithm uses the Gaussian naive base model to sort the videos by the most positive comments for each concept.
             </div>
             <div class="column">
-              <img src={chart} alt = "Chart Icon" width = "100"></img>
+              <div class="techImg">
+              <img src={chart} alt = "Chart Icon" width = "80"></img>
+              </div>
+
+
               <h2>
                 Displays a score based on their understanding
               </h2>

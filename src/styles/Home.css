@@ -135,12 +135,16 @@ button:hover {
     z-index:0;
     box-shadow: -1px 0px 22px 15px rgba(0,0,0,0.37);
 }
+
 .column{
     margin: 1em;
     float: left;
     width: 33%;
     text-align: center;
     
+}
+.techImg{
+    height:10;
 }
 .column:hover{
     transform: translateY(-5px);
@@ -379,19 +383,30 @@ button:hover {
     box-shadow: 0px 0px 20px 10px rgba(0,0,0,0.37);
     margin: 1em;
     width: 65%;
+    overflow:auto;
 }
 
 .bioImg {
     float:left;
-    padding-left: 1em;
-    padding-top:1em;
-    
+    margin-left:1em;
+    margin-top:1em;
+    margin-bottom: 1em;
+    object-fit: cover;
+    overflow: hidden;
+    height:auto;
+    overflow:auto;
+    border-style:inset;
 }
-img.inset {border-style: inset;}
+
    
 .bioText {
-    padding-left: 130px;
+    padding-left: 180px;
     width : 65%;
     padding-bottom:1em;
     padding-top: 1em;
+}
+
+.bioText h2{
+    margin-top: 0em;
+    margin-bottom:0.5em;
 }
