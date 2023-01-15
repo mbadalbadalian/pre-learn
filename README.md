@@ -1,4 +1,6 @@
 # PreLearn
+<img src="./src/assets/homepage.png" alt="PreLearn Homepage" width="300"/>
+
 ## Inspiration
 Our team had a focus on the following challenges: Most Innovative Use of Machine Learning, Artificial Intelligence, or Internet of Things Best Education Hack Best Visual Design Hack
 
