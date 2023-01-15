@@ -1,23 +1,11 @@
 #################################################################################################################
 #Libraries 
-#from flask import Flask, render_template
-#import my_library
 import openai, math
 import pandas as pd 
+import numpy as np
 
 #################################################################################################################
 #Secondary Functions 
-
-# def initializeFlask():
-#     app = Flask(__name__)
-
-#     @app.route('/')
-#     def run_script():
-#         result = my_library.run_my_script()
-#         return render_template('index.html', result=result)
-
-#     if __name__ == '__main__':
-#         app.run()
 
 def generateResponse(conceptsInputs):
     # Get user input
@@ -33,16 +21,17 @@ def generateResponse(conceptsInputs):
 #Main Functions 
 
 def GenerateAllResponses(listOfConceptsInputs):
-    #initializeFlask()
     #api_key
-    openai.api_key = "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"
+    openai.api_key = "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"
     listOfResponses = []
     for conceptInput in listOfConceptsInputs:
         response = generateResponse(conceptInput)
         listOfResponses.append(response)
-    allResponses_DF = pd.DataFrame()
-    allResponses_DF.columns = ['Questions','Answers']
+    columnList = ['Questions','Answers']
+    zero_data = np.zeros(shape=(len(listOfConceptsInputs),len(columnList)))
+    allResponses_DF = pd.DataFrame(zero_data, columns = ['Questions','Answers'])
     allResponses_DF['Questions'] = listOfConceptsInputs
+    print("hi")
     allResponses_DF['Answers'] = listOfResponses
     print(listOfResponses)
     return allResponses_DF
@@ -57,5 +46,4 @@ listOfConceptsInputs = ['Waves','Signals','Fourier Analysis']
 #################################################################################################################
 #Main Code
 
-print("hello")
 allResponses_DF = GenerateAllResponses(listOfConceptsInputs)
