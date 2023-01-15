@@ -2,13 +2,12 @@
 import * as youtube from "../utils/youtubeHandler";
 import YouTube from 'react-youtube';
 
-function Videos({ videoId, name, description}) {
+function Videos({ videoDetails }) {
   return (
     <div>
-    <h1>{name}</h1>
-    <p>{description}</p>
-    <YouTube videoId={videoId} opts={youtube.opts} />
-
+      <h1>{videoDetails.snippet.title}</h1>
+      <p>{videoDetails.snippet.description}</p>
+      <YouTube videoId={videoDetails.id.videoId} opts={youtube.opts} />
     </div>
   );
 }
