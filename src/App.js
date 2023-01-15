@@ -5,6 +5,7 @@ import Questions from "./components/Questions";
 import Results from "./components/Results";
 import AboutUs from "./components/AboutUs";
 import './styles/App.css';
+import logo from "./assets/logo.png"
 
 function App() {
   const [currentPageTab, setCurrentPageTab] = useState(
@@ -16,6 +17,21 @@ function App() {
 
   return (
     <div>
+      <div class = "header">
+        <div class="logo">
+          <a onClick={() => {setCurrentPageTab(constants.PAGES.HOME);}}>
+            <h1>
+              <img src = {logo} alt = "PreLearn Logo" width = "50"></img>
+              PreLearn
+            </h1>
+          </a>
+        </div>
+        <div class = "main-menu">
+          <ul>
+            <li><a onClick={() => {setCurrentPageTab(constants.PAGES.ABOUTUS);}}>About Us</a></li>
+          </ul>
+        </div>
+      </div>
       {currentPageTab === constants.PAGES.HOME && (
         <Home setCurrentPageTab={setCurrentPageTab}/>
       )}
@@ -25,7 +41,7 @@ function App() {
       )}
       
       {currentPageTab === constants.PAGES.RESULTS && (
-        <Results currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion}/>
+        <Results setCurrentPageTab={setCurrentPageTab}/>
       )}
 
       {currentPageTab === constants.PAGES.ABOUTUS && (

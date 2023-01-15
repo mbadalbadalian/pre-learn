@@ -6,22 +6,6 @@ import logo from "../assets/logo.png"
 function Home({ setCurrentPageTab }) {
   return (
     <div class = "main">
-      <div class = "header">
-        <div class="logo">
-          <a onClick={() => {setCurrentPageTab(constants.PAGES.HOME);}}>
-            <h1>
-              <img src = {logo} alt = "PreLearn Logo" width = "50"></img>
-              PreLearn
-            </h1>
-          </a>
-        </div>
-        <div class = "main-menu">
-          <ul>
-            <li><a onClick={() => {setCurrentPageTab(constants.PAGES.ABOUTUS);}}>About Us</a></li>
-          </ul>
-        </div>
-      </div>
-      
       <div class="container">
         <h1>
           Make you sure you know everything that is needed to know for your course!

@@ -78,6 +78,7 @@ button:hover {
 }
 
 .search-bar {
+    justify-content: left;
     font-size: calc(16px + (24 - 16)*(100vw - 320px)/(1920 - 320));
 }
 
@@ -86,21 +87,25 @@ button:hover {
 .search-bar input {
     font: 1em Hind, sans-serif;
     line-height: 1.5em;
+    justify-content: left;
 }
 
 .search-bar body,
 .search-bar input {
     color: #171717;
+    justify-content: left;
 }
 
 .search-bar body,
 .search-bar {
     display: flex;
+    justify-content: left;
 }
 
 .search-bar body {
     background: #f1f1f1;
     height: 100vh;
+    justify-content: left;
 }
 
 .search-bar input,
@@ -108,35 +113,41 @@ button:hover {
 .search-btn:before,
 .search-btn:after {
     transition: all 0.25s ease-out;
+    justify-content: left;
 }
 
 .search-bar input,
 .search-btn {
     width: 3em;
     height: 3em;
+    justify-content: left;
 }
 
 .search-bar input:invalid:not(:focus),
 .search-btn {
     cursor: pointer;
+    justify-content: left;
 }
 
 .search-bar,
 .search-bar input:focus,
 .search-bar input:valid {
     width: 70%;
+    justify-content: left;
 }
 
 .search-bar input:focus,
 .search-bar input:not(:focus)+.search-btn:focus {
     outline: transparent;
+    justify-content: left;
 }
 
 .search-bar {
-    margin: auto;
+    margin: 0;
     padding: 1.5em;
     justify-content: left;
     max-width: 30em;
+    justify-content: left;
 }
 
 .search-bar input {
@@ -149,10 +160,12 @@ button:hover {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
+    justify-content: left;
 }
 
 .search-bar input::-webkit-search-decoration {
     -webkit-appearance: none;
+    justify-content: left;
 }
 
 .search-bar input:focus,
@@ -161,6 +174,7 @@ button:hover {
     border-radius: 0.375em 0 0 0.375em;
     box-shadow: 0 0 0 0.1em #d9d9d9 inset;
     transform: scale(1);
+    justify-content: left;
 }
 
 .search-btn {
@@ -170,6 +184,7 @@ button:hover {
     position: relative;
     transform: translate(0.25em, 0.25em) rotate(45deg) scale(0.25, 0.125);
     transform-origin: 0 50%;
+    justify-content: left;
 }
 
 .search-btn:before,
@@ -178,6 +193,7 @@ button:hover {
     display: block;
     opacity: 0;
     position: absolute;
+    justify-content: left;
 }
 
 .search-btn:before {
@@ -187,6 +203,7 @@ button:hover {
     left: 0.75em;
     width: 1.2em;
     height: 1.2em;
+    justify-content: left;
 }
 
 .search-btn:after {
@@ -198,6 +215,7 @@ button:hover {
     height: 0.25em;
     transform: translate(0.2em, 0) rotate(45deg);
     transform-origin: 0 50%;
+    justify-content: left;
 }
 
 .search-btn span {
@@ -205,6 +223,7 @@ button:hover {
     overflow: hidden;
     width: 1px;
     height: 1px;
+    justify-content: left;
 }
 
 /* Active state */
@@ -213,6 +232,7 @@ button:hover {
     background: rgb(0, 191, 255);
     border-radius: 0 0.375em 0.375em 0;
     transform: scale(1);
+    justify-content: left;
 }
 
 .search-bar input:focus+.search-btn:before,
@@ -220,15 +240,18 @@ button:hover {
 .search-bar input:valid+.search-btn:before,
 .search-bar input:valid+.search-btn:after {
     opacity: 1;
+    justify-content: left;
 }
 
 .search-bar input:focus+.search-btn:hover,
 .search-bar input:valid+.search-btn:hover,
 .search-bar input:valid:not(:focus)+.search-btn:focus {
     background: lightgreen;
+    justify-content: left;
 }
 
 .search-bar input:focus+.search-btn:active,
 .search-bar input:valid+.search-btn:active {
     transform: translateY(1px);
+    justify-content: left;
 }
