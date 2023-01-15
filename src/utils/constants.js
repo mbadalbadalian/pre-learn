@@ -1,7 +1,8 @@
 export const PAGES = {
   HOME: 0,
   QUESTIONS: 1,
-  RESULTS: 2
+  RESULTS: 2,
+  ABOUTUS: 3
 };
 
 export const QUESTIONS = [
