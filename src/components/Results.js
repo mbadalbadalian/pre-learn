@@ -57,9 +57,9 @@ function Results({ setCurrentPageTab }) {
       <h1>
         Results
       </h1>
-      <ul>
+      <h2>
         Score: {questionsHandler.getScore()}
-      </ul>
+      </h2>
 
       {videoDetails === undefined ? (
         <h1>Loading suggested videos...</h1>
@@ -73,10 +73,6 @@ function Results({ setCurrentPageTab }) {
           </div>
         ))
       }
-
-      {/* {videoDetails !== undefined ? videoDetails[1].items.map((comment) => (
-        <p>{comment.snippet.topLevelComment.snippet.textOriginal}</p>
-      )) : ""} */}
     </div>
   );
 }
