@@ -1,9 +1,22 @@
+import { useState, useEffect } from "react";
 import '../styles/Home.css';
-import * as constants from "../utils/constants";
+import Videos from "./Video";
+import * as youtubeHandler from "../utils/youtubeHandler";
 
+function Results({ setCurrentPageTab, currentCourse }) {
+  const [videoDetails, setVideoDetails] = useState(undefined);
 
+  useEffect(() => {
+    if (!videoDetails) {
+      youtubeHandler.getYoutubeVideos(currentCourse).then((videos) => {
+        youtubeHandler.getYoutubeVideoComments(videos[0].id.videoId).then((comments) => {
+          console.log(comments.items);
+          setVideoDetails([videos[0], comments]);
+        });
+      });
+    }
+  });
 
-function Results({setCurrentPageTab}) {
   return (
     <div>
       <h1>
@@ -12,6 +25,12 @@ function Results({setCurrentPageTab}) {
       <ul>
         Ngl u kinda failed, nothing can help you buddy
       </ul>
+      {videoDetails !== undefined ? (
+        <Videos videoDetails={videoDetails[0]}></Videos>
+      ) : <h1>Loading suggested videos...</h1>}
+      {videoDetails !== undefined ? videoDetails[1].items.map((comment) => (
+        <p>{comment.snippet.topLevelComment.snippet.textOriginal}</p>
+      )) : ""}
     </div>
   );
 }

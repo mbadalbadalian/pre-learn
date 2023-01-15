@@ -1,4 +1,4 @@
-const { YOUTUBE_API_KEY } = require("../config");
+const YOUTUBE_API_KEY = process.env.REACT_APP_YOUTUBE_API_KEY;
 
 export const opts = {
     height: '200',
@@ -26,4 +26,13 @@ export async function getYoutubeVideos(query) {
     // console.log(videos);
 
     return videos.items;
+}
+
+export async function getYoutubeVideoComments(videoId) {
+    verifyYoutubeAPIKey();
+
+    const url = `https://www.googleapis.com/youtube/v3/commentThreads?key=${YOUTUBE_API_KEY}&textFormat=plainText&part=snippet&videoId=${videoId}&maxResults=50`;
+    const response = await fetch(url);
+    const comments = await response.json();
+    return comments;
 }

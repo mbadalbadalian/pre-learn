@@ -8,7 +8,9 @@ import './styles/App.css';
 import logo from "./assets/logo.png"
 
 function App() {
-  let course = undefined;
+  const [currentCourse, setCurrentCourse] = useState(
+    undefined
+  );
   const [currentPageTab, setCurrentPageTab] = useState(
     constants.PAGES.HOME
   );
@@ -35,7 +37,7 @@ function App() {
         </div>
       </div>
       {currentPageTab === constants.PAGES.HOME && (
-        <Home setCurrentPageTab={setCurrentPageTab} course={course}/>
+        <Home setCurrentPageTab={setCurrentPageTab} setCurrentCourse={setCurrentCourse}/>
       )}
       
       {currentPageTab === constants.PAGES.QUESTIONS && (
@@ -43,7 +45,7 @@ function App() {
       )}
       
       {currentPageTab === constants.PAGES.RESULTS && (
-        <Results setCurrentPageTab={setCurrentPageTab}/>
+        <Results setCurrentPageTab={setCurrentPageTab} currentCourse={currentCourse}/>
       )}
 
       {currentPageTab === constants.PAGES.ABOUTUS && (
