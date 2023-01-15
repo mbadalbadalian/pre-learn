@@ -1,12 +1,25 @@
 #################################################################################################################
 #Libraries 
+#from flask import Flask, render_template
+#import my_library
 import openai, math
 import pandas as pd 
 
 #################################################################################################################
 #Secondary Functions 
 
-def generateResponse(conceptInput):
+# def initializeFlask():
+#     app = Flask(__name__)
+
+#     @app.route('/')
+#     def run_script():
+#         result = my_library.run_my_script()
+#         return render_template('index.html', result=result)
+
+#     if __name__ == '__main__':
+#         app.run()
+
+def generateResponse(conceptsInputs):
     # Get user input
     question = "What are some key concepts I need to know about "+conceptsInputs[0]+"?"
     questionNumTokens = math.ceil(len(question)/4)
@@ -20,6 +33,7 @@ def generateResponse(conceptInput):
 #Main Functions 
 
 def GenerateAllResponses(listOfConceptsInputs):
+    #initializeFlask()
     #api_key
     openai.api_key = "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"
     listOfResponses = []
@@ -30,6 +44,7 @@ def GenerateAllResponses(listOfConceptsInputs):
     allResponses_DF.columns = ['Questions','Answers']
     allResponses_DF['Questions'] = listOfConceptsInputs
     allResponses_DF['Answers'] = listOfResponses
+    print(listOfResponses)
     return allResponses_DF
 
         
@@ -38,3 +53,9 @@ def GenerateAllResponses(listOfConceptsInputs):
 #Inputs
 
 listOfConceptsInputs = ['Waves','Signals','Fourier Analysis']
+
+#################################################################################################################
+#Main Code
+
+print("hello")
+allResponses_DF = GenerateAllResponses(listOfConceptsInputs)
