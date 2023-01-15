@@ -82,16 +82,19 @@ def vectorizeCorpus(corpus):
     X = cv.fit_transform(corpus).toarray()
     return X
 
-def calculateScores(testingDataFile, videoLink, y_pred):
-    numNegativeComments = np.count_nonzero(y_pred[0] == 0)
-    numNeutralComments = np.count_nonzero(y_pred[0] == 1)
-    numPositiveComments = np.count_nonzero(y_pred[0] == 2)
-    numTotalComments = len(y_pred[0])
+def calculateScores(testingDataFile, videoID, y_pred):
+    numNegativeComments = np.count_nonzero(y_pred == 0)
+    numNeutralComments = np.count_nonzero(y_pred == 1)
+    numPositiveComments = np.count_nonzero(y_pred == 2)
+    numTotalComments = len(y_pred)
 
-    commentScores_DF = pd.DataFrame()
-    commentScores_DF.columns = ['Filename','Video_Link','Negative_Score','Neutral_Score','Positive_Score']
+    columnNameList = ['Filename','Video_ID','Negative_Score','Neutral_Score','Positive_Score']
+    
+    zero_data = np.zeros(shape=(1,len(columnNameList)))
+    
+    commentScores_DF = pd.DataFrame(zero_data, columns = ['Filename','Video_ID','Negative_Score','Neutral_Score','Positive_Score'])    
     commentScores_DF['Filename'] = testingDataFile
-    commentScores_DF['Video_Link'] = videoLink
+    commentScores_DF['Video_ID'] = videoID
     commentScores_DF['Negative_Score'] = numNegativeComments/numTotalComments
     commentScores_DF['Neutral_Score'] = numNeutralComments/numTotalComments
     commentScores_DF['Positive_Score'] = numPositiveComments/numTotalComments
@@ -100,7 +103,7 @@ def calculateScores(testingDataFile, videoLink, y_pred):
 #################################################################################################################
 #Main Functions 
 
-def CalcCommentScores(testingDataFile, videoLink):
+def CalcCommentScores(testingDataFile, videoID):
     #Drops unimportant columns from data
     classifier = pickle.load(open('commentsClassifier.pkl', 'rb'))
     data1 = cleanData(testingDataFile)
@@ -121,28 +124,35 @@ def CalcCommentScores(testingDataFile, videoLink):
     y_pred = classifier.predict(X)
 
     #Calculate scores
-    commentScores_DF = calculateScores(testingDataFile, videoLink, y_pred)
+    commentScores_DF = calculateScores(testingDataFile, videoID, y_pred)
 
     return commentScores_DF
 
-def CalculateAllCommentScores(listOfTestingDataFiles, listofVideoLinks):
+def CalculateAllCommentScores(listOfTestingDataFiles, listofVideoIDs):
     i = 0
+    columnList = ['Filename','Video_ID','Negative_Score','Neutral_Score','Positive_Score']
+    zero_data = np.zeros(shape=(1,len(columnList)))
+    allCommentScores_DF = pd.DataFrame(zero_data, columns = columnList)
     for testingDataFile in listOfTestingDataFiles:
-        videoLink = listofVideoLinks
-        allCommentScores_DF = pd.DataFrame()
-        allCommentScores_DF.columns = ['Filename','Video_Link','Negative_Score','Neutral_Score','Positive_Score']
-        commentScores_DF = CalcCommentScores(testingDataFile, videoLink)
-        allCommentScores_DF.append(commentScores_DF)
-        allCommentScores_DF.sort_values(by=['Positive_Score', 'Neutral_Score'])
-        return allCommentScores_DF
+        videoID = listofVideoIDs[i]
+        commentScores_DF = CalcCommentScores(testingDataFile, videoID)
+        if i == 0:
+            allCommentScores_DF = commentScores_DF.copy()
+        else:
+            allCommentScores_DF = pd.concat([allCommentScores_DF,commentScores_DF])
+        i += 1
+    allCommentScores_DF.sort_values(by=['Positive_Score', 'Neutral_Score'])
+    newListOfVideo_IDs = allCommentScores_DF['Video_ID'].values
+    return newListOfVideo_IDs
 
 #################################################################################################################
 #Inputs
 
-testingDataFile = ['comments.csv']
-listofVideoLinks = ['www.test.com']
+listOfTestingDataFiles = ['comments.csv']
+listofVideoIDs = ['www.test.com']
 
 #################################################################################################################
 #Main Code
+newListOfVideo_IDs = CalculateAllCommentScores(listOfTestingDataFiles,listofVideoIDs)
 
-commentScores_DF = CalcCommentScores(testingDataFile)
+print(newListOfVideo_IDs)
