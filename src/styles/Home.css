@@ -90,15 +90,6 @@ button:hover {
     position: relative;
     box-shadow: -1px 0px 22px 15px rgba(0,0,0,0.37);
 }
-
-.pencil h1 {
-    padding-left: 0.5em;
-    padding-top: 0.5em;
-    width: 60%;
-    border: 0;
-    box-sizing: border-box;
-    margin: 0;
-}
 .container h1 {
     padding-left: 0.5em;
     padding-top: 0.5em;
@@ -120,6 +111,15 @@ button:hover {
     text-align: left;
     width: 50%
 }
+.pencil h1 {
+    padding-left: 0.5em;
+    padding-top: 0.5em;
+    width: 60%;
+    border: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
 
 .main-menu ul {
     list-style-type: none;

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import '../styles/Home.css';
+import '../styles/Results.css';
 import Videos from "./Video";
 import * as youtubeHandler from "../utils/youtubeHandler";
 
@@ -18,13 +18,10 @@ function Results({ setCurrentPageTab, currentCourse }) {
   });
 
   return (
-    <div>
+    <div class = "results">
       <h1>
         Results
       </h1>
-      <ul>
-        Ngl u kinda failed, nothing can help you buddy
-      </ul>
       {videoDetails !== undefined ? (
         <Videos videoDetails={videoDetails[0]}></Videos>
       ) : <h1>Loading suggested videos...</h1>}
