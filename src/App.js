@@ -41,7 +41,7 @@ function App() {
       )}
       
       {currentPageTab === constants.PAGES.QUESTIONS && (
-        <Questions setCurrentPageTab={setCurrentPageTab} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion}/>
+        <Questions setCurrentPageTab={setCurrentPageTab} currentQuestion={currentQuestion} setCurrentQuestion={setCurrentQuestion} currentCourse={currentCourse}/>
       )}
       
       {currentPageTab === constants.PAGES.RESULTS && (
