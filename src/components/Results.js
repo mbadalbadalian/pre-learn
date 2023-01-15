@@ -9,9 +9,11 @@ function Results({ setCurrentPageTab, currentCourse }) {
   useEffect(() => {
     if (!videoDetails) {
       youtubeHandler.getYoutubeVideos(currentCourse).then((videos) => {
-        console.log(videos);
-        setVideoDetails(videos[0]);
-      })
+        youtubeHandler.getYoutubeVideoComments(videos[0].id.videoId).then((comments) => {
+          console.log(comments.items);
+          setVideoDetails([videos[0], comments]);
+        });
+      });
     }
   });
 
@@ -23,12 +25,12 @@ function Results({ setCurrentPageTab, currentCourse }) {
       <ul>
         Ngl u kinda failed, nothing can help you buddy
       </ul>
-      {videoDetails === undefined && (
-        <h1>Loading suggested videos...</h1>
-      )}
-      {videoDetails !== undefined && (
-        <Videos videoDetails={videoDetails}></Videos>
-      )}
+      {videoDetails !== undefined ? (
+        <Videos videoDetails={videoDetails[0]}></Videos>
+      ) : <h1>Loading suggested videos...</h1>}
+      {videoDetails !== undefined ? videoDetails[1].items.map((comment) => (
+        <p>{comment.snippet.topLevelComment.snippet.textOriginal}</p>
+      )) : ""}
     </div>
   );
 }

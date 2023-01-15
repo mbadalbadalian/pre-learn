@@ -27,3 +27,12 @@ export async function getYoutubeVideos(query) {
 
     return videos.items;
 }
+
+export async function getYoutubeVideoComments(videoId) {
+    verifyYoutubeAPIKey();
+
+    const url = `https://www.googleapis.com/youtube/v3/commentThreads?key=${YOUTUBE_API_KEY}&textFormat=plainText&part=snippet&videoId=${videoId}&maxResults=50`;
+    const response = await fetch(url);
+    const comments = await response.json();
+    return comments;
+}
