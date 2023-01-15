@@ -12,12 +12,14 @@ from sklearn.utils import resample
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.naive_bayes import GaussianNB
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import confusion_matrix, accuracy_score
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
 from nltk.tokenize import word_tokenize
 from nltk.stem import WordNetLemmatizer, LancasterStemmer
 from nltk.stem.snowball import SnowballStemmer
 from nltk.corpus import stopwords, wordnet
 from string import punctuation
+
 
 nltk.download('stopwords')
 nltk.download('vader_lexicon')
@@ -132,11 +134,15 @@ def vectorizeCorpus(corpus):
     X = cv.fit_transform(corpus).toarray()
     return X
 
-def createGaussianNBModel(X, y):
+def createGaussianNBModelAndGetAccuracy(X, y):
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=0)
     classifier = GaussianNB()
     classifier.fit(X_train, y_train)
     pickle.dump(classifier, open('commentsClassifier.pkl', 'wb'))
+    y_pred = classifier.predict(X_test)
+    cm = confusion_matrix(y_test, y_pred)
+    nb_score = accuracy_score(y_test, y_pred)
+    print('accuracy',nb_score)
 
 #################################################################################################################
 #Main Functions 
@@ -170,13 +176,8 @@ def TrainModel(trainingDataFile):
     #Get y values associated with sentiment analyzer
     y = final_data.iloc[:, -1].values
 
-    print(X.size)
-    print(y.size)
-    print(len(corpus))
-    print(final_data.size)
-
     #Gaussian Naive Base model created
-    createGaussianNBModel(X, y)
+    createGaussianNBModelAndGetAccuracy(X, y)
 
 #################################################################################################################
 #Inputs

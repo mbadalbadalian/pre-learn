@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd 
 import matplotlib.pyplot as plt
 
-import os, pickle, nltk, re, string
+import os, pickle, nltk, re, string, json
 
 # Import functions for data preprocessing & data preparation
 from sklearn.preprocessing import LabelEncoder
@@ -142,14 +142,14 @@ def CalculateAllCommentScores(listOfTestingDataFiles, listofVideoIDs):
             allCommentScores_DF = pd.concat([allCommentScores_DF,commentScores_DF])
         i += 1
     allCommentScores_DF.sort_values(by=['Positive_Score', 'Neutral_Score'])
-    newListOfVideo_IDs = allCommentScores_DF['Video_ID'].values
+    newListOfVideo_IDs.to_json('newListOfVideo_IDs.json',orient='records')
     return newListOfVideo_IDs
 
 #################################################################################################################
 #Inputs
 
-listOfTestingDataFiles = ['comments.csv']
-listofVideoIDs = ['www.test.com']
+listOfTestingDataFiles = pd.read_json('listFilenames.json')
+listofVideoIDs = pd.read_json('listOfVideoIDs.json')
 
 #################################################################################################################
 #Main Code

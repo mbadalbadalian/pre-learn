@@ -1,9 +1,16 @@
 import { useState, useEffect } from "react";
 import '../styles/Results.css';
 import Videos from "./Video";
-import * as youtubeHandler from "../utils/youtubeHandler";
+import * as youtubeHandler from "../utnpmils/youtubeHandler";
 import * as questionsHandler from "../utils/questionsHandler";
 import * as constants from "../utils/constants";
+import { stringify } from "querystring";
+/*
+const pd = require("node-pandas");
+const personalPythonScript = 'C:/Users/matth/Documents/pre-learn/ML/ClassifyYouTubeComments.py';
+const fs = require('fs');
+const { execFile } = require('child_process'); 
+*/
 
 function Results({ setCurrentPageTab }) {
   const [videoDetails, setVideoDetails] = useState(undefined);
@@ -45,6 +52,27 @@ function Results({ setCurrentPageTab }) {
             comments: commentsPerVideo
           });
           console.log(newTopics);
+          
+          /*
+           columns = ['listOfVideoIDs']);
+          const csv2 = df2.to_csv();
+          fs.writeFileSync(filename, csv2);
+
+          const df3 = pandas.DataFrame(listFilenames, columns = ['listFilenames']);
+          const csv3 = df3.to_csv();
+          fs.writeFileSync(filename, csv3);
+
+          const pythonScript = personalPythonScript;
+
+          execFile('python', [pythonScript], (error, stdout, stderr) => {
+            if (error) {
+              throw error;
+            }
+            console.log(stdout);
+          });
+          */
+          //open json which contains the updated order of videos IDS
+          //newListOfVideo_IDs
         };
         setVideoDetails(newTopics)
       }
@@ -53,7 +81,7 @@ function Results({ setCurrentPageTab }) {
   }, []);
 
   return (
-    <div class = "results">
+    <div class="results">
       <h1>
         Results
       </h1>
@@ -72,6 +100,8 @@ function Results({ setCurrentPageTab }) {
             ))}
           </div>
         ))
+
+
       }
 
       {/* {videoDetails !== undefined ? videoDetails[1].items.map((comment) => (
