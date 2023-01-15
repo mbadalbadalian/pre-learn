@@ -1,9 +1,7 @@
 import '../styles/Home.css';
 import * as constants from "../utils/constants";
-import logo from "../assets/logo.png"
 
-
-function Home({ setCurrentPageTab }) {
+function Home({ setCurrentPageTab, course }) {
   return (
     <div class = "main">
       <div class="container">
@@ -21,7 +19,7 @@ function Home({ setCurrentPageTab }) {
             <span>Search</span>
           </button>
         </form>
-        <input type="text" defaultvalue="Insert Course"></input>
+        <input defaultValue="Insert Course" onChange={(e) => { course = e.target.value }}></input>
 
         <button onClick={() => {
           setCurrentPageTab(constants.PAGES.QUESTIONS);

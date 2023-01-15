@@ -8,6 +8,7 @@ import './styles/App.css';
 import logo from "./assets/logo.png"
 
 function App() {
+  let course = undefined;
   const [currentPageTab, setCurrentPageTab] = useState(
     constants.PAGES.HOME
   );
@@ -33,7 +34,7 @@ function App() {
         </div>
       </div>
       {currentPageTab === constants.PAGES.HOME && (
-        <Home setCurrentPageTab={setCurrentPageTab}/>
+        <Home setCurrentPageTab={setCurrentPageTab} course={course}/>
       )}
       
       {currentPageTab === constants.PAGES.QUESTIONS && (

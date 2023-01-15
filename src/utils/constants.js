@@ -5,9 +5,14 @@ export const PAGES = {
   ABOUTUS: 3
 };
 
-export const QUESTIONS = [
-  "What is A?",
-  "What is B?",
-  "What is C?",
-  "What is D?"
+export const TOPICS = [
+  "techniques of integration",
+  "applications of definite integrals",
+  "differential equations",
+  "polar coordinates",
+  "parametrized curves",
+  "sequences",
+  "infinite series",
+  "power series",
+  "partial derivatives"
 ]

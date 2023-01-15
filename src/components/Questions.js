@@ -2,7 +2,7 @@ import * as constants from "../utils/constants";
 
 function Questions({ setCurrentPageTab, currentQuestion, setCurrentQuestion }) {
   function nextQuestion() {
-    if (currentQuestion + 1 === constants.QUESTIONS.length) {
+    if (currentQuestion + 1 === constants.TOPICS.length) {
       setCurrentPageTab(constants.PAGES.RESULTS);
     } else {
       setCurrentQuestion(currentQuestion + 1);
@@ -14,7 +14,7 @@ function Questions({ setCurrentPageTab, currentQuestion, setCurrentQuestion }) {
       <h1>
         Question {currentQuestion + 1}
       </h1>
-      {constants.QUESTIONS[currentQuestion]}
+      {'How comfortable are you with ' + constants.TOPICS[currentQuestion] + '?'}
       <p>
         <button onClick={() => {
         }}> 1</button>
