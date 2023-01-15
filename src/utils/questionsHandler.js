@@ -5,6 +5,6 @@ export function getQuestions(course) {
     const topics = constants.TOPICS;
     
     return topics.map((topic) => {
-        return "How comfortable are you with " + topic;
+        return "How comfortable are you with " + topic + "?";
     });
 }

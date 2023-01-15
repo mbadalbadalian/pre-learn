@@ -1,6 +1,7 @@
 import * as constants from "../utils/constants";
+import * as questionsHandler from "../utils/questionsHandler";
 
-function Questions({ setCurrentPageTab, currentQuestion, setCurrentQuestion }) {
+function Questions({ setCurrentPageTab, currentQuestion, setCurrentQuestion, course }) {
   function nextQuestion() {
     if (currentQuestion + 1 === constants.TOPICS.length) {
       setCurrentPageTab(constants.PAGES.RESULTS);
@@ -14,7 +15,7 @@ function Questions({ setCurrentPageTab, currentQuestion, setCurrentQuestion }) {
       <h1>
         Question {currentQuestion + 1}
       </h1>
-      {'How comfortable are you with ' + constants.TOPICS[currentQuestion] + '?'}
+      {questionsHandler.getQuestions(course)[currentQuestion]}
       <p>
         <button onClick={() => {
         }}> 1</button>
